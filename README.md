@@ -1,7 +1,9 @@
 
-## https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
+## Build
 
+https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/
 
+```
 	python3 -m venv .venv
 
 	source .venv/bin/activate
@@ -11,21 +13,17 @@
 	which python
 	
 	which python3
-	
-	flask run --host=0.0.0.0
-
 ```
 
-## run
+## Run
 
-please check the start.sh and stop.sh and run it with **root** to open the 80 port in linux kernel. 
+please check the start.sh script run it with **root** to open the 80 port in linux kernel. 
 With ``` sudo -i ```
 
- ## bash script
- 
- ```
- sudo -i 
+ohup streamlit run streamlit_app.py --server.port 18880 &
 
- ./start.sh
- ./stop.sh
- ```
+## Docker 
+
+docker build -t streamlit-app:1.0.0 .
+
+docker run -d -p 18880:18880 --name rai-app streamlit-app:1.0.0
